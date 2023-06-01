@@ -1,5 +1,5 @@
 #ignore node_modules, .vscode
 /node_modules
-.vscode/
+/.vscode
 package.json
 package-lock.json
