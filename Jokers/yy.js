@@ -192,45 +192,84 @@
 
 // call()
 
-const Library = {
-    books: [],
 
-    addBooks: function(title, author) {
-        const book = {
-            title: title,
-            author: author,
-        }
-        this.books.push(book)
-    },
+/*
+    trying to make use of methods in objects
+*/
 
-    getBook: function (title) {
-        // let sortedBooks = this.books.sort()
-        // if (books.title === title) {
-        //     return books;
-        // } else {
-        //     console.log(`Could not find ${books.title}`)
-        // }
 
-        return this.books.find(book => book.title === title)
-    },
+// const Library = {
+//     books: [],
 
-    getAuthor: function () {
-        const authors = this.books.map(book => book.author);
-        return [...new Set(authors)];
+//     addBooks: function(title, author) {
+//         const book = {
+//             title: title,
+//             author: author,
+//         }
+//         this.books.push(book)
+//     },
 
-    },
-    getMostRecent: function () {
-        return this.books[0];
+//     getBook: function (title) {
+//         // let sortedBooks = this.books.sort()
+//         // if (books.title === title) {
+//         //     return books;
+//         // } else {
+//         //     console.log(`Could not find ${books.title}`)
+//         // }
+
+//         return this.books.find(book => book.title === title)
+//     },
+
+//     getAuthor: function () {
+//         const authors = this.books.map(book => book.author);
+//         return [...new Set(authors)];
+
+//     },
+//     getMostRecent: function () {
+//         return this.books[0];
+//     }
+// }
+
+// Library.addBooks("Millionaire Fastlane", "MJ DeMarco");
+// Library.addBooks("The Great Gatsby", "F. Scott Fitzgerald");
+// Library.addBooks("To Kill a Mockingbird", "Harper Lee");
+// Library.addBooks("1984", "George Orwell");
+// Library.addBooks("Rich Dad Poor Dad", "Robert Kiyosaki");
+// Library.addBooks("The Way of the Superior Man", "David Deida");
+
+// let sortedBooks = Library.books.sort();
+
+// console.log(sortedBooks)
+
+
+
+/*
+    refreshing on simple data structures
+    1 insertion sort
+    - know the length of the array
+    - commonly with numbers, then 
+*/
+
+
+const insertion = (cards) => {
+    const arrlen = cards.length;
+    let a, b, key;
+    for (a in Range(arrlen)) {
+        key = arrlen[a];
+        b = a - 1 
     }
+    if (arrlen[b] < key) {
+        console.log(`${arrlen[b]} is smaller than ${key}`)
+    } else {
+        console.log("Nothing here")
+    }
+    // console.log(b)
 }
 
-Library.addBooks("Millionaire Fastlane", "MJ DeMarco");
-Library.addBooks("The Great Gatsby", "F. Scott Fitzgerald");
-Library.addBooks("To Kill a Mockingbird", "Harper Lee");
-Library.addBooks("1984", "George Orwell");
-Library.addBooks("Rich Dad Poor Dad", "Robert Kiyosaki");
-Library.addBooks("The Way of the Superior Man", "David Deida");
+cards = [606, 232, 252, 993, 74, 255]
+insertion(cards);
 
-let sortedBooks = Library.books.sort();
 
-console.log(sortedBooks)
+
+
+
