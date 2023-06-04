@@ -192,45 +192,84 @@
 
 // call()
 
-const Library = {
-    books: [],
 
-    addBooks: function(title, author) {
-        const book = {
-            title: title,
-            author: author,
+/*
+    trying to make use of methods in objects
+*/
+
+
+// const Library = {
+//     books: [],
+
+//     addBooks: function(title, author) {
+//         const book = {
+//             title: title,
+//             author: author,
+//         }
+//         this.books.push(book)
+//     },
+
+//     getBook: function (title) {
+//         // let sortedBooks = this.books.sort()
+//         // if (books.title === title) {
+//         //     return books;
+//         // } else {
+//         //     console.log(`Could not find ${books.title}`)
+//         // }
+
+//         return this.books.find(book => book.title === title)
+//     },
+
+//     getAuthor: function () {
+//         const authors = this.books.map(book => book.author);
+//         return [...new Set(authors)];
+
+//     },
+//     getMostRecent: function () {
+//         return this.books[0];
+//     }
+// }
+
+// Library.addBooks("Millionaire Fastlane", "MJ DeMarco");
+// Library.addBooks("The Great Gatsby", "F. Scott Fitzgerald");
+// Library.addBooks("To Kill a Mockingbird", "Harper Lee");
+// Library.addBooks("1984", "George Orwell");
+// Library.addBooks("Rich Dad Poor Dad", "Robert Kiyosaki");
+// Library.addBooks("The Way of the Superior Man", "David Deida");
+
+// let sortedBooks = Library.books.sort();
+
+// console.log(sortedBooks)
+
+
+
+/*
+    refreshing on simple data structures
+    1 insertion sort
+    - know the length of the array
+    - commonly with numbers, then 
+    - tried working out the kadane algorithm, did not work for some reason.
+*/
+
+const kadaneAlgorithm = (array) => {
+    const size = array.length;
+    let maxEndHere = 0, maxSoFar;
+    for (let x = 0; x < size; x++) {
+        maxEndHere = maxSoFar + array[x];
+        if (maxEndHere < 0) {
+            maxEndHere = 0;
         }
-        this.books.push(book)
-    },
-
-    getBook: function (title) {
-        // let sortedBooks = this.books.sort()
-        // if (books.title === title) {
-        //     return books;
-        // } else {
-        //     console.log(`Could not find ${books.title}`)
-        // }
-
-        return this.books.find(book => book.title === title)
-    },
-
-    getAuthor: function () {
-        const authors = this.books.map(book => book.author);
-        return [...new Set(authors)];
-
-    },
-    getMostRecent: function () {
-        return this.books[0];
+        if (maxEndHere< maxSoFar) {
+            maxSoFar = maxEndHere;
+        } 
+        return maxSoFar;
     }
 }
 
-Library.addBooks("Millionaire Fastlane", "MJ DeMarco");
-Library.addBooks("The Great Gatsby", "F. Scott Fitzgerald");
-Library.addBooks("To Kill a Mockingbird", "Harper Lee");
-Library.addBooks("1984", "George Orwell");
-Library.addBooks("Rich Dad Poor Dad", "Robert Kiyosaki");
-Library.addBooks("The Way of the Superior Man", "David Deida");
+array = [-500, 200, -100, 900, -400, 600];
+kadaneAlgorithm(array);
 
-let sortedBooks = Library.books.sort();
 
-console.log(sortedBooks)
+
+
+
