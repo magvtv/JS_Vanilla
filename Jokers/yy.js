@@ -254,8 +254,8 @@
     
 //     return `${word} is a palindrome`;
 // } 
-
-
+// let word = 'Eva, can i see bees in a cave'
+// console.log(palindrome(word));
 class Node {
     constructor(value) {
         this.prev = null;
@@ -283,14 +283,3 @@ fourthNode.prev = thirdNode
 const tail = fourthNode;
 
 console.log(secondNode)
-
-
-// let word = 'Eva, can i see bees in a cave'
-// console.log(palindrome(word));
-
-
-
-
-
-
-
