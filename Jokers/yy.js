@@ -134,7 +134,7 @@
 //     "politicalViews": "Never that interested in politics"
 // }
 
-    
+
 // let x = JSON.stringify(myself)
 // console.log(JSON.parse(x.romanceHistory));
 // console.log(myself);
@@ -249,25 +249,47 @@
     - know the length of the array
     - commonly with numbers, then 
     - tried working out the kadane algorithm, did not work for some reason.
+    - palindrome work around
 */
 
-const kadaneAlgorithm = (array) => {
-    const size = array.length;
-    let maxEndHere = 0, maxSoFar;
-    for (let x = 0; x < size; x++) {
-        maxEndHere = maxSoFar + array[x];
-        if (maxEndHere < 0) {
-            maxEndHere = 0;
-        }
-        if (maxEndHere< maxSoFar) {
-            maxSoFar = maxEndHere;
-        } 
-        return maxSoFar;
-    }
-}
+// const kadaneAlgorithm = (array) => {
+//     const size = array.length;
+//     let maxEndHere = 0, maxSoFar;
+//     for (let x = 0; x < size; x++) {
+//         maxEndHere = maxSoFar + array[x];
+//         if (maxEndHere < 0) {
+//             maxEndHere = 0;
+//         }
+//         if (maxEndHere< maxSoFar) {
+//             maxSoFar = maxEndHere;
+//         } 
+//         return maxSoFar;
+//     }
+// }
 
-array = [-500, 200, -100, 900, -400, 600];
-kadaneAlgorithm(array);
+// array = [-500, 200, -100, 900, -400, 600];
+// kadaneAlgorithm(array);
+
+// let palindrome = (word) => {
+//     const checkWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+//     let startPoint = 0, endPoint = checkWord.length - 1;
+
+//     while (startPoint < endPoint) {
+//         if (checkWord[startPoint] !== checkWord[endPoint]) {
+//             return "Word aint a palindrome"
+//         }
+//         else {
+//             startPoint++;
+//             endPoint--;
+//         }
+//     }
+    
+//     return `${word} is a palindrome`;
+// } 
+
+
+// let word = 'Eva, can i see bees in a cave'
+// console.log(palindrome(word));
 
 
 
