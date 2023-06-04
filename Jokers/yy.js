@@ -248,26 +248,26 @@
     1 insertion sort
     - know the length of the array
     - commonly with numbers, then 
+    - tried working out the kadane algorithm, did not work for some reason.
 */
 
-
-const insertion = (cards) => {
-    const arrlen = cards.length;
-    let a, b, key;
-    for (a in Range(arrlen)) {
-        key = arrlen[a];
-        b = a - 1 
+const kadaneAlgorithm = (array) => {
+    const size = array.length;
+    let maxEndHere = 0, maxSoFar;
+    for (let x = 0; x < size; x++) {
+        maxEndHere = maxSoFar + array[x];
+        if (maxEndHere < 0) {
+            maxEndHere = 0;
+        }
+        if (maxEndHere< maxSoFar) {
+            maxSoFar = maxEndHere;
+        } 
+        return maxSoFar;
     }
-    if (arrlen[b] < key) {
-        console.log(`${arrlen[b]} is smaller than ${key}`)
-    } else {
-        console.log("Nothing here")
-    }
-    // console.log(b)
 }
 
-cards = [606, 232, 252, 993, 74, 255]
-insertion(cards);
+array = [-500, 200, -100, 900, -400, 600];
+kadaneAlgorithm(array);
 
 
 
