@@ -1,38 +1,3 @@
-// import prompt from "prompt"
-// let high = sort.length()
-// let i = 8, low = 0
-// let mid = sort[(high + low) * .5]
-
-// let bSearch = (sort, ) => {
-//     while (low <= high) {
-//         if (i == mid) {
-//             return mid
-//         }
-//         else if (i > mid) {
-//             low = mid + 1
-//         }
-//         else {
-//             high = mid - 1
-//         }
-//     }
-//     return -1
-// }
-
-
-// let sort = [1, 2, 4, 5, 8, 9, 10, 11, 17, 23, 88]
-
-
-
-
-
-// let newStack = simpleStack()
-// newStack.push(4, 2, "Belize", "USA")
-// newStack[7] = 'oranges'
-
-// // newStack.splice()
-// // console.log(newStack.copyWithin(0, 2, 8));
-// console.log(newStack);
-
 // const boroughs = new Map()
 // boroughs.set('01', 'City of Westminster')
 // boroughs.set('02', 'Redbridge')
@@ -47,24 +12,26 @@
 // boroughs.set('11', 'Hillingdon')
 // boroughs.set('12', 'Hounslow')
 // boroughs.set('13', 'Lewisham')
-
-
-// boroughs.clear()
+// // boroughs.clear()
 // for (const [key, value] of boroughs) {
 //     console.log(`${key}: ${value}`)
 // }
-// console.log(boroughs.get('A'))
+// // console.log(boroughs.get('A'))
 // console.log(boroughs.size)
 
 // let filmSet = new Set()
 // filmSet.add("Miss Sloane")
-// filmSet.add("Wakanda Forever")
-// filmSet.add("Adam Project")
+// filmSet.add("Black Panther: Wakanda Forever")
+// filmSet.add("Adam Project", "Creed III")
 // console.log(filmSet)
+
+// let text = "The show called Rugrats"
+// text.replaceAll("Rugrats", "Marvel")
+// console.log(text)
 
 // Array.from(filmSet);
 // [...filmSet];
-// let games = new Set(['Cyberpunk 2077', 'GTA', 'Fifa \'23', 'Witcher'])
+// let games = new Set(["Cyberpunk 2077", "GTA V", "Fifa \'23", "Witcher", "Watch Dogs 2", "Uncharted 4: Thief\'s End"])
 // console.log(games)
 
 
@@ -84,8 +51,8 @@
 //         "weightInKg": 70,
 //         "disorders": NaN
 //     },
-//     "studies": {
-//         "primarySchool": "Our Lady of Peace",
+//     "study": {
+//         "primarySchools": "Our Lady of Peace, Kabarak Primary School",
 //         "highSchool": "MHSK",
 //         "university": {
 //             "title": "JKUAT",
@@ -135,9 +102,9 @@
 // }
 
 
-// let x = JSON.stringify(myself)
+// let x = JSON.stringify(myself);
 // console.log(JSON.parse(x.romanceHistory));
-// console.log(myself);
+// console.log(myself.bestCars);
 
 
 // let add = (x, ...others) => {
@@ -250,6 +217,7 @@
     - commonly with numbers, then 
     - tried working out the kadane algorithm, did not work for some reason.
     - palindrome work around
+    - linked list work around
 */
 
 // const kadaneAlgorithm = (array) => {
@@ -288,8 +256,39 @@
 // } 
 
 
+class Node {
+    constructor(value) {
+        this.prev = null;
+        this.value = value;
+        this.next = null;
+    }
+}
+
+// Create the first node
+const head = new Node(1);
+
+// Link additional nodes
+const secondNode = new Node(2);
+head.next = secondNode;
+secondNode.prev = head;
+
+const thirdNode = new Node(3);
+secondNode.next = thirdNode;
+thirdNode.prev = secondNode
+
+const fourthNode = new Node(4);
+thirdNode.next = fourthNode;
+fourthNode.prev = thirdNode
+// Update the tail
+const tail = fourthNode;
+
+console.log(secondNode)
+
+
 // let word = 'Eva, can i see bees in a cave'
 // console.log(palindrome(word));
+
+
 
 
 
