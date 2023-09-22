@@ -1,32 +1,32 @@
 // import prompt from "prompt";
 const prompt = require('prompt-sync')()
 
-let actresses;
-actresses =[
-    'Marsai Martin',
-    'Sydney Sweeney',
-    'Maitrey Ramakrishnan',
-    'LaToya Tonodeo',
-    'Halle Bailey'
-]
+// let actresses;
+// actresses =[
+//     'Marsai Martin',
+//     'Sydney Sweeney',
+//     'Maitrey Ramakrishnan',
+//     'LaToya Tonodeo',
+//     'Halle Bailey'
+// ]
 
-let family = [
-    "Dad",
-    "Ma",
-    "Virginia",
-    "Raphael",
-    "Helen",
-    "PH"
-]
+// let family = [
+//     "Dad",
+//     "Ma",
+//     "Virginia",
+//     "Raphael",
+//     "Helen",
+//     "PH"
+// ]
 
-let countriesAfrica = [
-    "Cape Verde",
-    "Ethiopia",
-    "Malawi",
-    "Algeria",
-    "South Africa",
-    "Egypt"
-]
+// let countriesAfrica = [
+//     "Cape Verde",
+//     "Ethiopia",
+//     "Malawi",
+//     "Algeria",
+//     "South Africa",
+//     "Egypt"
+// ]
 
 
 
@@ -218,5 +218,60 @@ let countriesAfrica = [
 // let t = factorial(4)
 // console.log(t);
 
+const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+];
 
-console.log(Boolean("fuck off"));
+
+days.forEach((day) => {
+    schedule[day] = {}
+})
+
+const gradeSubjects = {
+    "Grd 4": ["MATH", "ENG", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI", "HED"],
+    "Grd 5": ["MATH", "ENG", "ENG-C", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI"],
+    "Grd 6": ["MATH", "ENG", "SWA", "MSC", "PHE", "LSKL", "AGRI", "PHE", "CRE", "SST", "ART", "HSCI"],
+    "Grd 7": ["MATH", "ENG", "SWA", "SCI", "HSCI", "AGRI", "MSC", "LSKL", "BST", "PHE", "CRE", "CSCI", "PTPC", "SST"],
+};
+
+const teacherAvailability = {
+    "001": ["ENG", "SST", "LSKL", "MSC", ],
+    "002": ["MATH", "SCI", "ART", "LSKL"],
+    "003": ["HSCI", "HED", "SST"],
+    "004": ["ENG", "MATH", ],
+    "005": ["BST", "SWA", "PHE", "PTPC", ],
+    "006": ["SWA", "CRE", "HSCI", ""],
+    "007": ["MATH", "CSCI", "SCI", "AGRI"],
+}
+
+const schedule = {}
+
+let assignTeacherToSubject = (grade) => {
+    const teachers = Object.keys(teacherAvailability);
+    const subjects = gradeSubjects[grade];
+    const assignedTeachers = {};
+
+    subjects.forEach((subject) => {
+        let teacherAssigned = false
+        tlen = teachers.length
+        for (let i = 0; i < tlen; i++) {
+            const teacher = teachers[i]
+            if (teacherAvailability[teacher].include(subjects)) {
+                assignedTeachers[subject] = teacher;
+                teacherAssigned = true
+                teacher.splice(i, 1)
+                break
+            }
+        }
+
+        if (!teacherAssigned) {
+            console.log(`No available teacher for ${subject} in ${grade}`)
+        } 
+    });
+
+    return assignedTeachers;
+}
