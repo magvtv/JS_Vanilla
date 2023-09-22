@@ -258,7 +258,16 @@ let createTeacher = (teacherCode, subjectAndGrades) => {
 const teacherCode = "007";
 const subjectsAndGrades = [
     {
-        subjects: "MATH", "CSCI", "SCI", "AGRI"
+        subject: "MATH", grades: [6, 7]
+    },
+    {
+        subject: "CSCI", grades: [7]
+    },
+    {
+        subject: "SCI", grades: [5]
+    },
+    {
+        subject: "AGRI", grades: [4]
     }
 ]
 
