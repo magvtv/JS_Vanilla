@@ -218,6 +218,35 @@ const prompt = require('prompt-sync')()
 // let t = factorial(4)
 // console.log(t);
 
+
+class Teacher {
+    constructor(teacherCode, teacherName) {
+        this.teacherCode = teacherCode
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // time slots for every lesson, one lesson 40 minutes
 const timeSlots = [
     "0800 - 0845",
@@ -241,96 +270,63 @@ const days = [
 ];
 
 
-// function taking the code, subjects taught and the grades taught of any given teacher
-let createTeacher = (teacherCode, subjectAndGrades) => {
-    const teacher = {
-        code: teacherCode,
-        subjects: {},
-    }
+// const gradeSubjects = {
+//     "Grd 4": ["MATH", "ENG", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI", "HED"],
+//     "Grd 5": ["MATH", "ENG", "ENG-C", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI"],
+//     "Grd 6": ["MATH", "ENG", "SWA", "MSC", "PHE", "LSKL", "AGRI", "PHE", "CRE", "SST", "ART", "HSCI"],
+//     "Grd 7": ["MATH", "ENG", "SWA", "SCI", "HSCI", "AGRI", "MSC", "LSKL", "BST", "PHE", "CRE", "CSCI", "PTPC", "SST"],
+// };
 
-    for (const {subject, grades } of subjectAndGrades) {
-        teacher.subjects[subject] = grades;
-    }
+// const teacherAvailability = {
+//     "001": ["ENG", "SST", "LSKL", "MSC", ],
+//     "002": ["MATH", "SCI", "ART", "LSKL"],
+//     "003": ["HSCI", "HED", "SST"],
+//     "004": ["ENG", "MATH", "AGRI"],
+//     "005": ["BST", "SWA", "PHE", "PTPC", ],
+//     "006": ["SWA", "CRE", "HSCI", ""],
+//     "007": ["MATH", "CSCI", "SCI", "AGRI"],
+// }
 
-    return teacher
-}
+// const schedule = {}
 
-const teacherCode = "007";
-const subjectsAndGrades = [
-    {
-        subject: "MATH", grades: [6, 7]
-    },
-    {
-        subject: "CSCI", grades: [7]
-    },
-    {
-        subject: "SCI", grades: [5]
-    },
-    {
-        subject: "AGRI", grades: [4]
-    }
-]
+// let assignTeacherToSubject = (grade) => {
+//     const teachers = Object.keys(teacherAvailability);
+//     const subjects = gradeSubjects[grade];
+//     const assignedTeachers = {};
 
-const tutor = createTeacher()
+//     subjects.forEach((subject) => {
+//         let teacherAssigned = false
+//         tlen = teachers.length
+//         for (let i = 0; i < tlen; i++) {
+//             const teacher = teachers[i]
+//             if (teacherAvailability[teacher].includes(subjects)) {
+//                 assignedTeachers[subject] = teacher;
+//                 teacherAssigned = true
+//                 teacher.splice(i, 1)
+//                 break
+//             }
+//         }
 
+//         if (!teacherAssigned) {
+//             console.log(`No available teacher for ${subject} in ${grade}`)
+//         } 
+//     });
 
-const gradeSubjects = {
-    "Grd 4": ["MATH", "ENG", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI", "HED"],
-    "Grd 5": ["MATH", "ENG", "ENG-C", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI"],
-    "Grd 6": ["MATH", "ENG", "SWA", "MSC", "PHE", "LSKL", "AGRI", "PHE", "CRE", "SST", "ART", "HSCI"],
-    "Grd 7": ["MATH", "ENG", "SWA", "SCI", "HSCI", "AGRI", "MSC", "LSKL", "BST", "PHE", "CRE", "CSCI", "PTPC", "SST"],
-};
-
-const teacherAvailability = {
-    "001": ["ENG", "SST", "LSKL", "MSC", ],
-    "002": ["MATH", "SCI", "ART", "LSKL"],
-    "003": ["HSCI", "HED", "SST"],
-    "004": ["ENG", "MATH", "AGRI"],
-    "005": ["BST", "SWA", "PHE", "PTPC", ],
-    "006": ["SWA", "CRE", "HSCI", ""],
-    "007": ["MATH", "CSCI", "SCI", "AGRI"],
-}
-
-const schedule = {}
-
-let assignTeacherToSubject = (grade) => {
-    const teachers = Object.keys(teacherAvailability);
-    const subjects = gradeSubjects[grade];
-    const assignedTeachers = {};
-
-    subjects.forEach((subject) => {
-        let teacherAssigned = false
-        tlen = teachers.length
-        for (let i = 0; i < tlen; i++) {
-            const teacher = teachers[i]
-            if (teacherAvailability[teacher].includes(subjects)) {
-                assignedTeachers[subject] = teacher;
-                teacherAssigned = true
-                teacher.splice(i, 1)
-                break
-            }
-        }
-
-        if (!teacherAssigned) {
-            console.log(`No available teacher for ${subject} in ${grade}`)
-        } 
-    });
-
-    return assignedTeachers;
-}
+//     return assignedTeachers;
+// }
 
 // Populate the schedule aka the timetable
-days.forEach((day) => {
-    schedule[day] = {}
-    timeSlots.forEach((timeSlot) => {
-        schedule[day][timeSlot] = {}
+// days.forEach((day) => {
+//     schedule[day] = {}
+//     timeSlots.forEach((timeSlot) => {
+//         schedule[day][timeSlot] = {}
 
-        for (const grade in gradeSubjects) {
-            schedule[day][timeSlot][grade] = assignTeacherToSubject(grade)
+//         for (const grade in gradeSubjects) {
+//             schedule[day][timeSlot][grade] = assignTeacherToSubject(grade)
         
 
-        }
-    })
-});
+//         }
+//     })
+// });
 
-console.log(JSON.stringify(schedule, null, 2))
+// console.log(JSON.stringify(schedule, null, 2))
