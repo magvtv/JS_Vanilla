@@ -241,6 +241,30 @@ const days = [
 ];
 
 
+// function taking the code, subjects taught and the grades taught of any given teacher
+let createTeacher = (teacherCode, subjectAndGrades) => {
+    const teacher = {
+        code: teacherCode,
+        subjects: {},
+    }
+
+    for (const {subject, grades } of subjectAndGrades) {
+        teacher.subjects[subject] = grades;
+    }
+
+    return teacher
+}
+
+const teacherCode = "007";
+const subjectsAndGrades = [
+    {
+        subjects: "MATH", "CSCI", "SCI", "AGRI"
+    }
+]
+
+const tutor = createTeacher()
+
+
 const gradeSubjects = {
     "Grd 4": ["MATH", "ENG", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI", "HED"],
     "Grd 5": ["MATH", "ENG", "ENG-C", "SWA", "PHE", "SCI", "CRE", "SST", "ART", "HSCI", "AGRI"],
