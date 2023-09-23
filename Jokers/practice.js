@@ -222,9 +222,72 @@ const prompt = require('prompt-sync')()
 class Teacher {
     constructor(teacherCode, teacherName) {
         this.teacherCode = teacherCode
-        
+        this.teacherName = teacherName
+        this.subject = {}
+    }
+
+    addTeachableSubjects(subject, grades) {
+        this.teachableSubjects[subject] = grades;
+    }
+
+    isTeachingSubject(subject, grade) {
+        if (subject in this.teachableSubjects) {
+            const allowedGrades = this.teachableSubjects[subject];
+            return allowedGrades.includes(grade);
+        }
+        return false;
+    }
+    getTeachableSubjects() {
+        return this.subjects
     }
 }
+
+const teacher1 = new Teacher("001", "Mr Oscar")
+const teacher2 = new Teacher("002", "Mr Daniel")
+const teacher3 = new Teacher("003", "Md Sharon")
+const teacher4 = new Teacher("004", "Md Kirui")
+const teacher5 = new Teacher("005", "Mr Eric")
+const teacher6 = new Teacher("006", "Md Rose")
+const teacher7 = new Teacher("007", "Mr Magutu")
+
+teacher1 = addTeachableSubjects("SST", [7])
+teacher1 = addTeachableSubjects("MSC", [6])
+teacher1 = addTeachableSubjects("LSKL", [6])
+
+teacher2 = addTeachableSubjects("MATH", [6, 7])
+teacher2 = addTeachableSubjects("ART", [4])
+teacher2 = addTeachableSubjects("SCI", [7])
+teacher2 = addTeachableSubjects("LSKL", [4])
+
+teacher3 = addTeachableSubjects("HSCI", [4, 7])
+teacher3 = addTeachableSubjects("SST", [4, 5, 6])
+teacher3 = addTeachableSubjects("HED", [7])
+
+teacher4 = addTeachableSubjects("MATH", [4,5])
+teacher4 = addTeachableSubjects("AGRI", [5])
+teacher4 = addTeachableSubjects("ENG", [4, 6, 7])
+
+teacher5 = addTeachableSubjects("BST", [7])
+teacher5 = addTeachableSubjects("SWA", [4, 5, 6])
+teacher5 = addTeachableSubjects("PTPC", [7])
+
+teacher6 = addTeachableSubjects("CRE", [5])
+teacher6 = addTeachableSubjects("ENG", [5, 7])
+teacher6 = addTeachableSubjects("SWA", [5])
+teacher6 = addTeachableSubjects("PHE", [4])
+teacher6 = addTeachableSubjects("HSCI", [5])
+
+teacher7 = addTeachableSubjects("MATH", [6, 7])
+teacher7 = addTeachableSubjects("SCI", [5])
+teacher7 = addTeachableSubjects("CSCI", [7])
+teacher7 = addTeachableSubjects("AGRI", [4])
+
+
+
+
+
+
+
 
 
 
