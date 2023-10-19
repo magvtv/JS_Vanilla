@@ -57,3 +57,10 @@ Code Project
     1 Quote Generator
     2 Movie Theatre Booking
     3 
+
+Real World Application of Airport data
+- Flight Route Planning (emergency response, )
+- Travel Recommendations
+- Air Traffic Management
+- Logistics (cargo)
+- 
