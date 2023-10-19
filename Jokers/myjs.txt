@@ -58,3 +58,9 @@ Code Project
     2 Movie Theatre Booking
     3 
 
+Real World Application of Airport data
+- Flight Route Planning (emergency response, )
+- Travel Recommendations
+- Air Traffic Management
+- Logistics (cargo)
+- 
