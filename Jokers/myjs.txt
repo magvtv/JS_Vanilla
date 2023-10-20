@@ -64,3 +64,10 @@ Real World Application of Airport data
 - Air Traffic Management
 - Logistics (cargo)
 - 
+
+CODING IDEAS
+
+1
+Thinking of an idea that I can try out. learnt about priority queues in design analysis of algorithms,
+would be nice to see through one for cinema theatre in javascript
+
