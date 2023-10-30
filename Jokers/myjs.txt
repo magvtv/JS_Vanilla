@@ -64,3 +64,18 @@ Real World Application of Airport data
 - Air Traffic Management
 - Logistics (cargo)
 - 
+
+CODING IDEAS
+
+trying to blend learning data structures with projects. the fact that i have not done this sooner
+is the same fact i want to furiously finish off with it. there are many, so it might take a while
+
+1
+Thinking of an idea that I can try out. learnt about 'priority queues' in design analysis of algorithms,
+would be nice to see through one for cinema theatre in javascript
+
+2
+'trees' could come in handy to illustrate my family. for a binary tree, maybe male and female members 
+with respect of their ages
+
+
