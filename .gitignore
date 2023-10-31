@@ -5,3 +5,5 @@ package.json
 package-lock.json
 /Jokers/myjs.txt
 /HoodieDelivery/node_modules
+/HoodieDelivery/package.json
+/HoodieDelivery/package-lock.json
