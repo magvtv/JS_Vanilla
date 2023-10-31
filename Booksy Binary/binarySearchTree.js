@@ -90,5 +90,3 @@ class BinarySearchTree {
 		return node;
 	}
 }
-
-export 'binarySearchTree'
