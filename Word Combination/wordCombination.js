@@ -54,6 +54,6 @@ const generateWordCombinations = (input) => {
 
   // let userInput = rl.question('Enter word or phrase: ')
   // let format = rl.question('Select output format: \n1. UPPERCASE\n2. lowercase')
-  const userInput = 'kinya'
+  const userInput = 'vermeer'
   generateWordCombinations(userInput);
   
