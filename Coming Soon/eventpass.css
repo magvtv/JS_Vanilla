@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap');
+
+
+:root {
+    --page-font: "Noto Sans Bengali", sans-serif;
+    --text-color: #F9FADC;
+    --primary: #00A6A6;
+    --secondary: #F08700;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--page-font);
+    color: var(--text-color);
+    background-image: url("./images/concert-bg.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.page-logo {
+    /* position: absolute; */
+    text-align: center;
+    margin-top: 2.75rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.hero-text {
+    text-align: center;
+    line-height: 0.1;
+    font-size: 3rem;
+    margin-top: 1.25em;
+    text-transform: capitalize;
+
+}
+
+.hero-subtext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 1.25em;
+    text-transform: capitalize;
+}
+
+.form {
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+
+input[type="email"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1em;
+    margin-bottom: 0.625em;
+    width: 75%;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0.625em 1.25em;
+    background-color: var(--primary);
+    text-transform: capitalize;
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 5s;
+    tran
+}
+
+button:hover{
+    background-color: var(--secondary);
+    transform: scale(1.2);
+
+}
+
+
+
+.social-accounts {
+    margin: 0 1.25rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: inherit;
+}
