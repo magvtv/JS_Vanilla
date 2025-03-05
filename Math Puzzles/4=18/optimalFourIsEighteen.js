@@ -11,7 +11,7 @@ class Expression {
     evaluate(expr) {
         try {
             const result = Function(`return ${expr}`)()
-            return Math.abs(result - 10) < 0.0000001
+            return Math.abs(result - 18) < 0.0000001
         } catch (e) {
             return false
         }
@@ -75,7 +75,7 @@ class ExpressionSolver extends Expression {
     evaluate(expr) {
         try {
             const result = Function(`return ${expr}`)();
-            return Math.abs(result - 10) < 1e-9; // Small epsilon for floating-point comparison
+            return Math.abs(result - 18) < 1e-9; // Small epsilon for floating-point comparison
         } catch (e) {
             return false; // Handles division by zero or invalid operations
         }
@@ -111,5 +111,5 @@ class ExpressionSolver extends Expression {
 }
 
 // Example usage
-const solver = new ExpressionSolver(9929);
+const solver = new ExpressionSolver(5998);
 console.log(solver.solve());

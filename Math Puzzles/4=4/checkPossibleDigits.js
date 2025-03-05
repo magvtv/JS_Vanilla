@@ -80,12 +80,12 @@ console.log('Starting the search for solvable 4-digit numbers...');
 const solvableNumbers = findSolvableNumbers();
 const output = solvableNumbers.join('\n')
 
-fs.writeFile('solvable_numbers.txt', output, (err) => {
+fs.writeFile('solvable_numbers_4.txt', output, (err) => {
     if (err) {
         console.error('Error in writing to file: ', err)
     }
     else {
-        console.log('Solvable numbers saved in solvable_numbers.txt')
+        console.log('Solvable numbers saved in solvable_numbers_4.txt')
         console.log('Total count: ', solvableNumbers.length)
     }
 })
