@@ -84,7 +84,7 @@ console.log('Total count:', solvableNumbers.length);
 
 // Save results to a file
 const output = solvableNumbers.join('\n');
-fs.writeFile('solvable_numbers.txt', output, (err) => {
+fs.writeFile('solvable_numbers_12.txt', output, (err) => {
 	if (err) {
 		console.error('Error writing to file:', err);
 	} else {

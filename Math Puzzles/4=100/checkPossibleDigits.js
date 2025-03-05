@@ -22,7 +22,7 @@ function evaluate(expr) {
 	try {
 		const result = Function(`return ${expr}`)();
 		// Use epsilon for floating-point comparison
-		return Math.abs(result - 18) < 1e-9;
+		return Math.abs(result - 100) < 1e-9;
 	} catch (e) {
 		// Handle division by zero or other errors
 		return false;
@@ -80,12 +80,12 @@ console.log('Starting the search for solvable 4-digit numbers...');
 const solvableNumbers = findSolvableNumbers();
 const output = solvableNumbers.join('\n')
 
-fs.writeFile('solvable_numbers_18.txt', output, (err) => {
+fs.writeFile('solvable_numbers_100.txt', output, (err) => {
     if (err) {
         console.error('Error in writing to file: ', err)
     }
     else {
-        console.log('Solvable numbers saved in solvable_numbers_18.txt')
+        console.log('Solvable numbers saved in solvable_numbers_100.txt')
         console.log('Total count: ', solvableNumbers.length)
     }
 })
