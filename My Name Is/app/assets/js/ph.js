@@ -5,7 +5,7 @@ const TYPE_DELAY = 100; // Time between revealing correct characters in ms
 
 async function fetchWords() {
     try {
-        const response = await fetch('../names.txt');
+        const response = await fetch('../data/names.txt');
         const text = await response.text();
         return text.split('\n')
                    .map(line => line.trim())
