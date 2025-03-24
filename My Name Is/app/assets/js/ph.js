@@ -2,10 +2,17 @@ const OUTPUT_ELEMENT = document.getElementById('output');
 const FLICKER_COUNT = 8; // Number of random transitions per character
 const FLICKER_DELAY = 50; // Time between character changes in ms
 const TYPE_DELAY = 25; // Time between revealing correct characters in ms
+const WORD_PATH = '/Vanilla/My Name Is/app/assets/data/names.txt'
+
 
 async function fetchWords() {
     try {
-        const response = await fetch('/Vanilla/My Name Is/app/assets/data/names.txt');
+        const response = await fetch(new URL(WORD_PATH, window.location.origin ));
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const text = await response.text();
         return text.split('\n')
                    .map(line => line.trim())
