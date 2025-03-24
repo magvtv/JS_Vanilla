@@ -1,25 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #3d3838;
+    /* display: flex; */
+    display: grid;
+    place-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     height: 100vh;
     margin: 0;
     font-family: 'Space Mono', monospace;
+    overflow: hidden;
 }
 
 #container {
-    color: #0f0;
-    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: auto;
+    min-width: 50%;
+    color: rgb(20, 235, 199);
     text-align: center;
-}
-
-.hacker-text {
     font-weight: 400;	/* can change to 700 for bold */
     font-style: normal;		/* can change to italic */
 }
+
 
 .hacker-text::after {
     content: "|";
@@ -29,4 +35,18 @@ body {
 @keyframes blink {
     from, to { opacity: 0; }
     50% { opacity: 1; }
+}
+
+#output {
+    font-size: clamp(2rem, 8vw, 3rem);
+    padding: 0rem clamp(1rem, 2vw, 4rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    cursor: default;
+    transition: all 400ms; 
+}
+
+#output:hover {
+    /* can alternate */
+    background-color: black;
+    color: white;
 }
