@@ -2,12 +2,13 @@ const OUTPUT_ELEMENT = document.getElementById('output');
 const FLICKER_COUNT = 8; // Number of random transitions per character
 const FLICKER_DELAY = 50; // Time between character changes in ms
 const TYPE_DELAY = 25; // Time between revealing correct characters in ms
-const WORD_PATH = '/Vanilla/My Name Is/app/assets/data/names.txt'
+// const WORD_PATH = '/Vanilla/My Name Is/app/assets/data/names.txt'
 
 
 async function fetchWords() {
     try {
-        const response = await fetch(new URL(WORD_PATH, window.location.origin ));
+        // const response = await fetch(new URL(WORD_PATH, window.location.origin ));
+        const response = await fetch('./assets/data/names.txt')
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -19,6 +20,7 @@ async function fetchWords() {
                    .filter(line => line.length > 0);
     } catch (error) {
         console.error('Error loading words:', error);
+        console.log('Attempted URL:', './assets/data/names.txt');
         return [];
     }
 }
