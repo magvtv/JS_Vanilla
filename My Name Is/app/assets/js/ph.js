@@ -4,6 +4,23 @@ const FLICKER_DELAY = 50; // Time between character changes in ms
 const TYPE_DELAY = 25; // Time between revealing correct characters in ms
 // const WORD_PATH = '/Vanilla/My Name Is/app/assets/data/names.txt'
 
+document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey && (event.key === '+' || event.key === '-' || event.key === '0')) {
+        event.preventDefault();
+    }
+});
+
+
+// Prevent double-tap zoom on mobile
+let lastTouch = 0;
+document.addEventListener('touchend', (event) => {
+    const now = Date.now();
+    if (now - lastTouch <= 300) {
+        event.preventDefault();
+    }
+    lastTouch = now;
+}, { passive: false });
+
 
 async function fetchWords() {
     try {
